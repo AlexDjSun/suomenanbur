@@ -1,17 +1,14 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     private let headerView = UIView()
     private let appNameLabel = UILabel()
-    private let settingsButton = UIButton(type: .system)
     private let linksStackView = UIStackView()
     
     private let contentView = UIView()
-    private let textView = TextFieldViewController().textField
-    private let appearanceSwitch = UISwitch()
-    private let appearanceSwitchLabel = UILabel()
-    
+    private var textField: TextField!
+
     private let textKey = "com.majbyr.suomenanbur.text"
     
     override func viewDidLoad() {
@@ -22,49 +19,44 @@ class ViewController: UIViewController {
     private func configureUI() {
         setupViews()
         setupConstraints()
-        setupInteractions()
     }
     
     private func setupViews() {
         configureBackgroundColor()
         configureHeaderView()
+        configureTextField()
         configureContentView()
         configureLinksStackView()
     }
     
     private func configureBackgroundColor() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
     }
     
     private func configureHeaderView() {
         headerView.backgroundColor = .systemGray5
         view.addSubview(headerView)
         
-        appNameLabel.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
-        appNameLabel.font = .preferredFont(forTextStyle: .title2)
+        appNameLabel.text = "𐍡𐍣𐍩𐍜𐍔𐍝 𐍐𐍝𐍑𐍣𐍠"
+//        appNameLabel.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+        appNameLabel.font = .preferredFont(forTextStyle: .title3)
+        appNameLabel.textAlignment = .center
         headerView.addSubview(appNameLabel)
         
-        settingsButton.setTitle("Settings", for: .normal)
-        settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
-        headerView.addSubview(settingsButton)
     }
+    
+    private func configureTextField() {
+            textField = TextField()
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(textField)
+            
+            // Additional configuration if needed
+            textField.delegate = self  // Make sure to conform ViewController to UITextFieldDelegate if you use this
+        }
     
     private func configureContentView() {
         view.addSubview(contentView)
         
-        let normalFont: UIFont = .systemFont(ofSize: 17, weight: .regular)
-        textView.borderStyle = .roundedRect
-        textView.font = normalFont
-        textView.placeholder = "Enter some text"
-        textView.text = UserDefaults.standard.string(forKey: textKey)
-        
-        contentView.addSubview(textView)
-        
-        appearanceSwitch.addTarget(self, action: #selector(appearanceSwitchValueChanged), for: .valueChanged)
-        contentView.addSubview(appearanceSwitch)
-        
-        appearanceSwitchLabel.text = "Dark Appearance"
-        contentView.addSubview(appearanceSwitchLabel)
     }
     
     private func configureLinksStackView() {
@@ -72,13 +64,14 @@ class ViewController: UIViewController {
         view.addSubview(linksStackView)
         
         let buttons = [
+            ("gear", "Settings", #selector(openSettings)),
             ("app.store", "App Store", #selector(openAppStore)),
             ("github", "GitHub", #selector(openGitHub)),
-            ("globe", "Website", #selector(openWebsite))
-        ]
+            ("globe", "Website", #selector(openWebsite))        ]
         
         buttons.forEach { imageName, title, selector in
             let button = UIButton.createSystemButton(withTitle: title, imageSystemName: imageName, target: self, action: selector)
+            button.contentHorizontalAlignment = .left
             linksStackView.addArrangedSubview(button)
         }
     }
@@ -87,11 +80,8 @@ class ViewController: UIViewController {
         // Deactivate translatesAutoresizingMaskIntoConstraints
         headerView.translatesAutoresizingMaskIntoConstraints = false
         appNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        settingsButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        appearanceSwitch.translatesAutoresizingMaskIntoConstraints = false
-        appearanceSwitchLabel.translatesAutoresizingMaskIntoConstraints = false
+        textField.translatesAutoresizingMaskIntoConstraints = false
         linksStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -103,45 +93,23 @@ class ViewController: UIViewController {
             
             appNameLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
             appNameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            
-            settingsButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            settingsButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-            
+            appNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
             // Content View Constraints
             contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            textView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            textView.heightAnchor.constraint(equalToConstant: 200),
+            textField.topAnchor.constraint(equalTo: contentView.topAnchor),
+            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 50),
             
-            appearanceSwitch.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 16),
-            appearanceSwitch.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            
-            appearanceSwitchLabel.centerYAnchor.constraint(equalTo: appearanceSwitch.centerYAnchor),
-            appearanceSwitchLabel.leadingAnchor.constraint(equalTo: appearanceSwitch.trailingAnchor, constant: 8),
-            
-            linksStackView.topAnchor.constraint(equalTo: appearanceSwitch.bottomAnchor, constant: 16),
+            linksStackView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16),
             linksStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            linksStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
             
         ])
-    }
-
-    
-    private func setupInteractions() {
-        textView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textViewTapped)))
-    }
-    
-    // MARK: Selector Methods
-    
-    @objc private func textViewTapped() {
-        textView.becomeFirstResponder()
-    }
-    
-    @objc private func appearanceSwitchValueChanged(_ sender: UISwitch) {
-        view.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
     }
     
     @objc private func openSettings() {
