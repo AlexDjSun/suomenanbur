@@ -83,16 +83,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func openAppStore() {
         // Implementation to open the App Store link
-        
+        let appStoreUrl = URL(string: "https://apps.apple.com/us/developer/aleksei-ivanov/id1536776623")
+        UIApplication.shared.open(appStoreUrl!)
     }
     
     @objc private func openGitHub() {
         // Implementation to open GitHub link
-        print("Opening GitHub...")
+        let gitHubUrl = URL(string: "https://github.com/AlexDjSun/anbur-ios")
+        UIApplication.shared.open(gitHubUrl!)
     }
     
     @objc private func openWebsite() {
         // Implementation to open Website link
-        print("Opening Website...")
+        let websiteUrl = URL(string: "https://anburseura.wordpress.com/")
+        UIApplication.shared.open(websiteUrl!)
     }
 }
