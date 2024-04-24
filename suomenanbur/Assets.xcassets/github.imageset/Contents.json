@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "github-mark.svg",
+      "filename" : "4745725_code_development_github_open-source_programming_icon.svg",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "preserves-vector-representation" : true,
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }
