@@ -12,11 +12,9 @@ class TextField: UITextField {
     }
     
     private func setup() {
-        self.placeholder = "Enter some text"
+        self.placeholder = "Test input"
         self.layer.cornerRadius = 10
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.systemGray.cgColor
-        // add padding
+        self.backgroundColor = .systemGray6
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
         self.leftView = paddingView
         self.leftViewMode = .always
