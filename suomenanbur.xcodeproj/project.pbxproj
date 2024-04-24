@@ -27,6 +27,7 @@
 		5FDCDE672BB6D7E800BCD549 /* KeyboardHeightDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCDE402BB6D7D900BCD549 /* KeyboardHeightDetector.swift */; };
 		5FDCDE682BB6D7E800BCD549 /* CustomKeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCDE432BB6D7D900BCD549 /* CustomKeyButton.swift */; };
 		5FDCDE732BB6E83100BCD549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5FF0542BB6D686009622B1 /* Assets.xcassets */; };
+		5FF5C3C52BD87C3A00E07248 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF5C3C42BD87C3A00E07248 /* TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		5FDCDE6E2BB6DE2200BCD549 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5FDCDE6F2BB6DE3A00BCD549 /* kv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kv; path = kv.lproj/Main.strings; sourceTree = "<group>"; };
 		5FDCDE702BB6DE3A00BCD549 /* kv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kv; path = kv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5FF5C3C42BD87C3A00E07248 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				5F5FF04B2BB6D684009622B1 /* AppDelegate.swift */,
 				5F5FF04D2BB6D684009622B1 /* SceneDelegate.swift */,
 				5F5FF04F2BB6D684009622B1 /* ViewController.swift */,
+				5FF5C3C42BD87C3A00E07248 /* TextField.swift */,
 				5F6A55DD2BBB5BBD00D7702F /* TextFieldViewController.swift */,
 				5F5FF0512BB6D684009622B1 /* Main.storyboard */,
 				5F5FF0542BB6D686009622B1 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 				5F6A55DE2BBB5BBD00D7702F /* TextFieldViewController.swift in Sources */,
 				5F5FF0502BB6D684009622B1 /* ViewController.swift in Sources */,
 				5F5FF04C2BB6D684009622B1 /* AppDelegate.swift in Sources */,
+				5FF5C3C52BD87C3A00E07248 /* TextField.swift in Sources */,
 				5F5FF04E2BB6D684009622B1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
