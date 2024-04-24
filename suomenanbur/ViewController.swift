@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(linksStackView)
         
         let buttons = [
-            ("gear", "Settings", #selector(openSettings)),
+            ("settings", "Settings", #selector(openSettings)),
             ("app.store", "App Store", #selector(openAppStore)),
             ("github", "GitHub", #selector(openGitHub)),
             ("globe", "Website", #selector(openWebsite))        ]
@@ -128,11 +128,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 extension UIButton {
     static func createSystemButton(withTitle title: String, imageSystemName imageName: String, target: Any?, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: imageName), for: .normal)
+        let button = UIButton(type: .custom)
+
+        // Setup image on the left
+        if let originalImage = UIImage(named: imageName) {
+            let resizedImage = originalImage.resized(to: CGSize(width: 30, height: 30))
+            button.setImage(resizedImage, for: .normal)
+            button.tintColor = .label
+            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 0) // Adjust as needed
+        }
+        
+        let arrowImage = UIImage(systemName: "chevron.right")
+
         button.setTitle(title, for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10) // Adjust as needed
+
+        // General styling
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.contentHorizontalAlignment = .left
         button.addTarget(target, action: action, for: .touchUpInside)
+
         return button
+    }
+}
+
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
+        draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage
     }
 }
 

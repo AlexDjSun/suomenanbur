@@ -14,7 +14,6 @@
 		5F5FF0552BB6D686009622B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5FF0542BB6D686009622B1 /* Assets.xcassets */; };
 		5F5FF0582BB6D686009622B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5FF0562BB6D686009622B1 /* LaunchScreen.storyboard */; };
 		5F5FF06A2BB6D6CD009622B1 /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F5FF0632BB6D6CD009622B1 /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5F6A55DE2BBB5BBD00D7702F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A55DD2BBB5BBD00D7702F /* TextFieldViewController.swift */; };
 		5FDCDE5D2BB6D7E800BCD549 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCDE3F2BB6D7D900BCD549 /* KeyboardLayout.swift */; };
 		5FDCDE5E2BB6D7E800BCD549 /* KeyBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCDE442BB6D7D900BCD549 /* KeyBase.swift */; };
 		5FDCDE5F2BB6D7E800BCD549 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCDE452BB6D7D900BCD549 /* KeyboardView.swift */; };
@@ -66,7 +65,6 @@
 		5F5FF0632BB6D6CD009622B1 /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5FF0652BB6D6CD009622B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		5F5FF0672BB6D6CD009622B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F6A55DD2BBB5BBD00D7702F /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		5FDCDE3E2BB6D7D900BCD549 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		5FDCDE3F2BB6D7D900BCD549 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		5FDCDE402BB6D7D900BCD549 /* KeyboardHeightDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHeightDetector.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				5F5FF04D2BB6D684009622B1 /* SceneDelegate.swift */,
 				5F5FF04F2BB6D684009622B1 /* ViewController.swift */,
 				5FF5C3C42BD87C3A00E07248 /* TextField.swift */,
-				5F6A55DD2BBB5BBD00D7702F /* TextFieldViewController.swift */,
 				5F5FF0512BB6D684009622B1 /* Main.storyboard */,
 				5F5FF0542BB6D686009622B1 /* Assets.xcassets */,
 				5F5FF0562BB6D686009622B1 /* LaunchScreen.storyboard */,
@@ -262,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F6A55DE2BBB5BBD00D7702F /* TextFieldViewController.swift in Sources */,
 				5F5FF0502BB6D684009622B1 /* ViewController.swift in Sources */,
 				5F5FF04C2BB6D684009622B1 /* AppDelegate.swift in Sources */,
 				5FF5C3C52BD87C3A00E07248 /* TextField.swift in Sources */,
