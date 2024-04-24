@@ -83,7 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @objc private func openAppStore() {
         // Implementation to open the App Store link
-        print("Opening App Store...")
+        
     }
     
     @objc private func openGitHub() {

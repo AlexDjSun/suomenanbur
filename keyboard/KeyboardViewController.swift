@@ -9,6 +9,8 @@ class KeyboardViewController: UIInputViewController {
     
     var keyboardHeightConstraint: NSLayoutConstraint?
     
+    private var deleteTimer: Timer?
+
     let keyboarHeight: CGFloat = Calculator.getKeyboardHeight()
     let toolbarHeight: CGFloat = Calculator.getToolbar()
     
@@ -174,6 +176,18 @@ class KeyboardViewController: UIInputViewController {
 }
 
 extension KeyboardViewController: KeyDelegate {
+    func startContinuousDelete() {
+        deleteTimer?.invalidate()  // Cancel any existing timer
+        deleteTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            self?.textDocumentProxy.deleteBackward()
+        }
+    }
+
+    func stopContinuousDelete() {
+        deleteTimer?.invalidate()
+        deleteTimer = nil
+    }
+    
     func keyDidTap(character: String) {
         switch character {
         case "⌫":
@@ -196,6 +210,8 @@ extension KeyboardViewController: KeyDelegate {
             textDocumentProxy.insertText(character)
         }
     }
+    
+    
     
     func handleLongPress() {
         

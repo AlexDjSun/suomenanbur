@@ -77,6 +77,7 @@ class SpecialKey: KeyBase {
         
         longPressTimer?.invalidate()
         longPressTimer?.prepareForInterfaceBuilder()
+        delegate?.stopContinuousDelete()
     }
     
     func resizeImage(_ image: UIImage, toWidth width: CGFloat, andHeight height: CGFloat) -> UIImage? {
@@ -95,8 +96,11 @@ class SpecialKey: KeyBase {
     }
     
     @objc private func handleLongPress() {
-        delegate?.handleLongPress()
         longPressFeedback.impactOccurred()
+        if keyLabel == "⌫" {
+            delegate?.startContinuousDelete()
+        }
+        delegate?.handleLongPress()
     }
 }
 

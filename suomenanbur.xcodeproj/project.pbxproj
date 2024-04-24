@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F491E8F2BD903E10067516D /* HeaderViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F491E8C2BD903E10067516D /* HeaderViewConfigurator.swift */; };
+		5F491E902BD903E20067516D /* MenuStackView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F491E8D2BD903E10067516D /* MenuStackView.swift .swift */; };
+		5F491E912BD903E20067516D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F491E8E2BD903E10067516D /* Extensions.swift */; };
 		5F5FF04C2BB6D684009622B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FF04B2BB6D684009622B1 /* AppDelegate.swift */; };
 		5F5FF04E2BB6D684009622B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FF04D2BB6D684009622B1 /* SceneDelegate.swift */; };
 		5F5FF0502BB6D684009622B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FF04F2BB6D684009622B1 /* ViewController.swift */; };
@@ -54,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F491E8C2BD903E10067516D /* HeaderViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewConfigurator.swift; sourceTree = "<group>"; };
+		5F491E8D2BD903E10067516D /* MenuStackView.swift .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuStackView.swift .swift"; sourceTree = "<group>"; };
+		5F491E8E2BD903E10067516D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5F5FF0482BB6D684009622B1 /* suomenanbur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = suomenanbur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5FF04B2BB6D684009622B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5FF04D2BB6D684009622B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				5FF5C3C42BD87C3A00E07248 /* TextField.swift */,
 				5F5FF0512BB6D684009622B1 /* Main.storyboard */,
 				5F5FF0542BB6D686009622B1 /* Assets.xcassets */,
+				5F491E8E2BD903E10067516D /* Extensions.swift */,
+				5F491E8C2BD903E10067516D /* HeaderViewConfigurator.swift */,
+				5F491E8D2BD903E10067516D /* MenuStackView.swift .swift */,
 				5F5FF0562BB6D686009622B1 /* LaunchScreen.storyboard */,
 				5F5FF0592BB6D686009622B1 /* Info.plist */,
 			);
@@ -261,8 +270,11 @@
 			files = (
 				5F5FF0502BB6D684009622B1 /* ViewController.swift in Sources */,
 				5F5FF04C2BB6D684009622B1 /* AppDelegate.swift in Sources */,
+				5F491E902BD903E20067516D /* MenuStackView.swift .swift in Sources */,
 				5FF5C3C52BD87C3A00E07248 /* TextField.swift in Sources */,
 				5F5FF04E2BB6D684009622B1 /* SceneDelegate.swift in Sources */,
+				5F491E8F2BD903E10067516D /* HeaderViewConfigurator.swift in Sources */,
+				5F491E912BD903E20067516D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RJL88SHRZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = suomenanbur/Info.plist;
@@ -479,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RJL88SHRZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = suomenanbur/Info.plist;
@@ -511,7 +523,7 @@
 				DEVELOPMENT_TEAM = RJL88SHRZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = keyboard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = keyboard;
+				INFOPLIST_KEY_CFBundleDisplayName = Anbur;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -540,7 +552,7 @@
 				DEVELOPMENT_TEAM = RJL88SHRZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = keyboard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = keyboard;
+				INFOPLIST_KEY_CFBundleDisplayName = Anbur;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

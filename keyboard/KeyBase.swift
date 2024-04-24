@@ -3,6 +3,8 @@ import AudioToolbox
 
 protocol KeyDelegate: AnyObject {
     func keyDidTap(character: String)
+    func startContinuousDelete()
+    func stopContinuousDelete()
     func handleLongPress()
 }
 
