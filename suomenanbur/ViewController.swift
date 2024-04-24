@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func openGitHub() {
         // Implementation to open GitHub link
-        let gitHubUrl = URL(string: "https://github.com/AlexDjSun/anbur-ios")
+        let gitHubUrl = URL(string: "https://github.com/AlexDjSun/suomenanbur")
         UIApplication.shared.open(gitHubUrl!)
     }
     
